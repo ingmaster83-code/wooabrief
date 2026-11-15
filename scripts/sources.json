@@ -1,0 +1,11 @@
+{
+  "부동산": [
+    { "publisher": "한국경제", "url": "https://www.hankyung.com/feed/realestate" },
+    { "publisher": "파이낸셜뉴스", "url": "https://www.fnnews.com/rss/r20/fn_realnews_realestate.xml" },
+    { "publisher": "연합뉴스", "url": "https://www.yna.co.kr/rss/economy.xml", "keywords": ["부동산", "아파트", "전세", "월세", "주택", "분양", "청약", "재건축", "재개발", "공시가격", "임대", "집값", "대출규제", "LTV", "DSR", "종부세", "양도세"] }
+  ],
+  "보험": [
+    { "publisher": "한국보험신문", "url": "https://www.insnews.co.kr/rss/allArticle.xml" },
+    { "publisher": "연합뉴스", "url": "https://www.yna.co.kr/rss/economy.xml", "keywords": ["보험", "실손", "연금보험", "보험료", "손해보험", "생명보험", "금융감독원", "보험금"] }
+  ]
+}

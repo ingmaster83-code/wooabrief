@@ -1,0 +1,17 @@
+{
+  "name": "infoblog",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev --port 8775",
+    "build": "astro build",
+    "preview": "astro preview --port 8775",
+    "generate": "node scripts/run.mjs",
+    "generate:dry": "node scripts/run.mjs --dry"
+  },
+  "dependencies": {
+    "astro": "^5.14.0",
+    "fast-xml-parser": "^4.5.0"
+  }
+}

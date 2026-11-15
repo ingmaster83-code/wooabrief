@@ -1,0 +1,75 @@
+name: daily-post-and-deploy
+
+on:
+  schedule:
+    - cron: '0 22 * * *'   # 매일 한국시간 07:00 (UTC 22:00)
+  workflow_dispatch:         # 수동 실행 버튼
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'data/**'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # 스케줄/수동 실행일 때만 새 글 생성 (push 때는 건너뜀)
+      - name: Generate posts
+        if: github.event_name != 'push'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: npm run generate
+
+      - name: Commit new posts
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "infoblog-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A src/content/posts data
+          git diff --staged --quiet || git commit -m "chore: daily posts $(date -u +%F)"
+          git push
+
+      - name: Compute site URL
+        id: site
+        run: |
+          OWNER="${GITHUB_REPOSITORY_OWNER,,}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          echo "url=https://${OWNER}.github.io" >> "$GITHUB_OUTPUT"
+          echo "base=/${REPO}" >> "$GITHUB_OUTPUT"
+
+      - name: Build
+        env:
+          SITE_URL: ${{ steps.site.outputs.url }}
+          BASE_PATH: ${{ steps.site.outputs.base }}
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
