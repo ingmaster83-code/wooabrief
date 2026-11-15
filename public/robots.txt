@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wooabrief.wooahouse.com/sitemap-index.xml

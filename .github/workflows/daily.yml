@@ -46,18 +46,7 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: daily posts $(date -u +%F)"
           git push
 
-      - name: Compute site URL
-        id: site
-        run: |
-          OWNER="${GITHUB_REPOSITORY_OWNER,,}"
-          REPO="${GITHUB_REPOSITORY#*/}"
-          echo "url=https://${OWNER}.github.io" >> "$GITHUB_OUTPUT"
-          echo "base=/${REPO}" >> "$GITHUB_OUTPUT"
-
       - name: Build
-        env:
-          SITE_URL: ${{ steps.site.outputs.url }}
-          BASE_PATH: ${{ steps.site.outputs.base }}
         run: npm run build
 
       - uses: actions/upload-pages-artifact@v3

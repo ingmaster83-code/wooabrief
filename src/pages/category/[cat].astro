@@ -13,8 +13,9 @@ const posts = (await getCollection('posts'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const fmt = (d: Date) => d.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Seoul' });
 ---
-<Base title={cat} description={`${cat} 분야 오늘의 이슈 정리`}>
-  <h1>{cat}</h1>
+<Base title={`${cat} 이슈 정리`} description={`${cat} 분야의 오늘 이슈를 매일 정리합니다.`}>
+  <nav class="breadcrumb"><a href={`${base}/`}>홈</a> › <span>{cat}</span></nav>
+  <h1 class="page-title">{cat} 이슈 정리</h1>
   {posts.length === 0 && <p>아직 발행된 글이 없습니다.</p>}
   {posts.map((p) => (
     <a class="card" href={`${base}/posts/${p.id}/`}>

@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
-// GitHub Pages 배포 시 워크플로가 SITE_URL / BASE_PATH 를 주입한다.
+// 커스텀 도메인(wooabrief.wooahouse.com) 기준. 다른 주소에서 미리 볼 때만 환경변수로 덮어쓴다.
 export default defineConfig({
-  site: process.env.SITE_URL || 'http://localhost:8775',
+  site: process.env.SITE_URL || 'https://wooabrief.wooahouse.com',
   base: process.env.BASE_PATH || '/',
+  integrations: [sitemap()],
 });
