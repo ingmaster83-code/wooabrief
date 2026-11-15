@@ -11,7 +11,6 @@
     "generate:dry": "node scripts/run.mjs --dry"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.5",
     "astro": "^5.14.0",
     "fast-xml-parser": "^4.5.0"
   }
