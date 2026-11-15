@@ -3,7 +3,7 @@ import { collect, loadSeen, saveSeen, linkHash } from './collect.mjs';
 import { writeDigest, writeNews, writeGuide } from './generate.mjs';
 
 /**
- * 한 번 실행 = 글 최대 1편 발행 (GitHub Actions가 10분마다 호출)
+ * 한 번 실행 = 글 최대 1편 발행 (GitHub Actions가 30분마다 호출)
  *  1) 오늘 일일 요약(digest)이 아직 없으면 → 요약 글
  *  2) 그 외에는 뉴스 집중 분석(news) ↔ 용어·제도 해설(guide)을 번갈아 발행
  *     - 뉴스 글에서 나온 용어는 해설 대기열에 들어가 우선 작성됨
