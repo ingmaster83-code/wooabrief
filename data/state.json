@@ -1,5 +1,5 @@
 {
- "lastKind": "news",
+ "lastKind": "digest",
  "done": [
   "전세보증금반환보증"
  ],
@@ -18,6 +18,11 @@
    "topic": "보험부채",
    "category": "보험",
    "from": "2026-11-16-0402-insurance-news"
+  },
+  {
+   "topic": "재건축초과이익환수제",
+   "category": "부동산",
+   "from": "2026-11-16-realestate"
   }
  ]
 }
