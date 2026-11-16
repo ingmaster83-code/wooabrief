@@ -1,5 +1,5 @@
 {
- "lastKind": "digest",
+ "lastKind": "news",
  "done": [
   "전세보증금반환보증"
  ],
@@ -38,6 +38,21 @@
    "topic": "보험판매전문회사",
    "category": "보험",
    "from": "2026-11-16-insurance"
+  },
+  {
+   "topic": "재건축",
+   "category": "부동산",
+   "from": "2026-11-16-2054-realestate-news"
+  },
+  {
+   "topic": "일반분양",
+   "category": "부동산",
+   "from": "2026-11-16-2054-realestate-news"
+  },
+  {
+   "topic": "정비구역",
+   "category": "부동산",
+   "from": "2026-11-16-2054-realestate-news"
   }
  ]
 }
