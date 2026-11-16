@@ -30,20 +30,35 @@ const norm = (s) => s.replace(/\s+/g, '').toLowerCase();
 const saveState = () => writeFileSync(STATE_PATH, JSON.stringify(state, null, 1));
 
 // ── 시간(KST) ────────────────────────────────────────────
-const now = new Date();
-const kst = new Date(now.getTime() + 9 * 3600 * 1000);
-const ymd = kst.toISOString().slice(0, 10);
-const hhmm = kst.toISOString().slice(11, 16).replace(':', '');
-const dateLabel = `${kst.getUTCFullYear()}년 ${kst.getUTCMonth() + 1}월 ${kst.getUTCDate()}일`;
+// 한 번 실행에서 여러 편을 쓸 수 있어서, 글마다 시각을 새로 읽는다
+let now, kst, ymd, hhmm, dateLabel;
+function tick() {
+  now = new Date();
+  kst = new Date(now.getTime() + 9 * 3600 * 1000);
+  ymd = kst.toISOString().slice(0, 10);
+  hhmm = kst.toISOString().slice(11, 16).replace(':', '') + kst.toISOString().slice(17, 19); // HHMMSS (같은 분 충돌 방지)
+  dateLabel = `${kst.getUTCFullYear()}년 ${kst.getUTCMonth() + 1}월 ${kst.getUTCDate()}일`;
+}
+tick();
 
 // ── 기존 글 정보 ─────────────────────────────────────────
-const files = readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'));
-const todayCount = files.filter((f) => f.startsWith(ymd)).length;
+let files = readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md'));
+const refreshFiles = () => { files = readdirSync(POSTS_DIR).filter((f) => f.endsWith('.md')); };
+const countToday = () => files.filter((f) => f.startsWith(ymd)).length;
 const existingTitles = new Set(
   files.map((f) => (readFileSync(new URL(f, POSTS_DIR), 'utf8').match(/^title: (.*)$/m)?.[1] ?? '')).filter(Boolean).map((t) => norm(t)),
 );
 const todayGuidesByCat = (cat) =>
   files.filter((f) => f.startsWith(ymd) && f.includes(`-${CAT_SLUG[cat]}-guide`)).length;
+
+// 목표 편수: 매일 KST 06:00부터 30분마다 1편씩. GitHub 스케줄이 늦거나 건너뛰어도 밀린 만큼 따라잡는다.
+const SLOT_MIN = 30;
+const DAY_START_HOUR = 6;
+const MAX_BURST = Number(process.env.MAX_BURST || 6); // 한 번 실행에서 최대 편수
+function targetCount() {
+  const mins = kst.getUTCHours() * 60 + kst.getUTCMinutes() - DAY_START_HOUR * 60;
+  return Math.min(MAX_PER_DAY, mins < 0 ? 0 : Math.floor(mins / SLOT_MIN) + 1);
+}
 
 // ── 유틸 ─────────────────────────────────────────────────
 function scoreItem(it, cat) {
@@ -118,6 +133,7 @@ async function tryNews(collected, seen) {
   const post = await writeNews(cat, items, dateLabel, seedKeys.slice(0, 5));
   publish({ cat, kind: 'news', slug, post, sourceItems: items, extraTags: seedKeys.slice(0, 2) });
   items.forEach((x) => (seen[linkHash(x.link)] = Date.now()));
+  collected[cat] = collected[cat].filter((x) => !items.includes(x)); // 같은 실행에서 다시 쓰지 않게 제거
   state.lastKind = 'news';
   enqueueTerms(cat, post.terms, slug);
   return true;
@@ -151,11 +167,6 @@ async function tryGuide() {
 }
 
 // ── 실행 ─────────────────────────────────────────────────
-if (todayCount >= MAX_PER_DAY) {
-  console.log(`오늘 ${todayCount}편 발행 — 일일 한도(${MAX_PER_DAY}) 도달, 쉬어감`);
-  process.exit(0);
-}
-
 const seen = loadSeen();
 const collected = await collect(sources, seen);
 for (const cat of CATS) console.log(`[${cat}] 신규 기사 ${collected[cat].length}건`);
@@ -165,27 +176,34 @@ if (DRY) {
     collected[cat].map((it) => ({ it, s: scoreItem(it, cat) })).sort((a, b) => b.s - a.s).slice(0, 5)
       .forEach(({ it, s }) => console.log(`   [${s}점] (${it.publisher}) ${it.title}`));
   }
-  console.log(`대기열 ${state.queue.length}개, 완료 주제 ${state.done.length}개, 오늘 ${todayCount}/${MAX_PER_DAY}편`);
+  console.log(`대기열 ${state.queue.length}개, 완료 주제 ${state.done.length}개, 오늘 ${countToday()}/${MAX_PER_DAY}편, 지금까지 목표 ${targetCount()}편`);
   process.exit(0);
 }
 
-let published = false;
-try {
-  if (await tryDigest(collected)) published = true;
-  else {
-    const guideFirst = state.lastKind === 'news';
-    const order = guideFirst ? ['guide', 'news'] : ['news', 'guide'];
-    for (const job of order) {
-      try {
-        if (job === 'guide' ? await tryGuide() : await tryNews(collected, seen)) { published = true; break; }
-      } catch (e) {
-        console.error(`[${job}] 실패: ${e.message}`);
-      }
+async function doOne() {
+  tick();
+  if (await tryDigest(collected)) return true;
+  const order = state.lastKind === 'news' ? ['guide', 'news'] : ['news', 'guide'];
+  for (const job of order) {
+    try {
+      if (job === 'guide' ? await tryGuide() : await tryNews(collected, seen)) return true;
+    } catch (e) {
+      console.error(`[${job}] 실패: ${e.message}`);
     }
   }
-} catch (e) {
-  console.error(`실패: ${e.message}`);
+  return false;
 }
 
-if (published) { saveSeen(seen); saveState(); }
-else console.log('이번 회차에는 발행할 글이 없음');
+let published = 0;
+while (published < MAX_BURST) {
+  tick();
+  const today = countToday();
+  const target = targetCount();
+  if (today >= MAX_PER_DAY) { console.log(`오늘 ${today}편 — 일일 한도(${MAX_PER_DAY}) 도달`); break; }
+  if (today >= target) { console.log(`오늘 ${today}편 (지금까지 목표 ${target}편) — 아직 쓸 차례 아님`); break; }
+  if (!(await doOne())) { console.log('발행할 글이 없음'); break; }
+  published++;
+  refreshFiles();
+  saveSeen(seen); saveState(); // 한 편마다 저장 (중간에 끊겨도 안전)
+}
+console.log(`이번 실행 발행: ${published}편`);
