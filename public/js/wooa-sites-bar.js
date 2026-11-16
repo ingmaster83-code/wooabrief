@@ -100,7 +100,7 @@
       const desc = (isEN || isJA) ? (t.de || t.d) : t.d;
       return `
       <div class="ws-item">
-        <a href="${t.su}" class="ws-site-badge" target="_blank" rel="noopener">${t.s}</a>
+        <a href="${t.su}" class="ws-site-badge" rel="noopener">${t.s}</a>
         <div class="ws-item-right">
           <a href="${url}" class="ws-tool-name">${name}</a>
           ${desc ? `<span class="ws-tool-desc">${desc}</span>` : ''}
@@ -130,7 +130,7 @@
           <span>↵ ${isJA ? '移動' : isEN ? 'Go' : '이동'}</span>
           <span>Esc ${isJA ? '閉じる' : isEN ? 'Close' : '닫기'}</span>
           <span>Ctrl+K ${isJA ? '開く' : isEN ? 'Open' : '열기'}</span>
-          <a href="${isEN ? 'https://wooahouse.com/en/search.html' : 'https://wooahouse.com/search.html'}" id="ws-full-link" target="_blank" rel="noopener">
+          <a href="${isEN ? 'https://wooahouse.com/en/search.html' : 'https://wooahouse.com/search.html'}" id="ws-full-link" rel="noopener">
             ${isJA ? '🔎 全体検索ページ' : isEN ? '🔎 Full search page' : '🔎 전체 검색 페이지'}
           </a>
         </div>
@@ -205,15 +205,15 @@
     <div class="our-sites-inner">
       <span class="our-sites-label">${label}</span>
       <div class="our-sites-links">
-        ${toolSites.map(s => `<a href="${s.url}"${s.host === currentHost ? ' class="active"' : ''} ${s.host === currentHost ? '' : 'target="_blank" rel="noopener"'}>${s.icon} ${s.name}${s.badge === 'new' ? '<span class="ws-nav-badge ws-badge-new">NEW</span>' : s.badge === 'update' ? '<span class="ws-nav-badge ws-badge-update">UPDATE</span>' : ''}</a>`).join('')}
+        ${toolSites.map(s => `<a href="${s.url}"${s.host === currentHost ? ' class="active"' : ''} ${s.host === currentHost ? '' : 'rel="noopener"'}>${s.icon} ${s.name}${s.badge === 'new' ? '<span class="ws-nav-badge ws-badge-new">NEW</span>' : s.badge === 'update' ? '<span class="ws-nav-badge ws-badge-update">UPDATE</span>' : ''}</a>`).join('')}
       </div>
       <button class="ws-open-btn" title="${isJA ? 'ツール検索 (Ctrl+K)' : isEN ? 'Search tools (Ctrl+K)' : '도구 검색 (Ctrl+K)'}">🔍 ${isJA ? '検索' : isEN ? 'Search' : '검색'}</button>
     </div>
     <div class="our-sites-info-row">
       <span class="our-sites-info-label">${isJA ? '📌 インフォサイト' : isEN ? '📌 Info Sites' : '📌 패밀리 정보 사이트'}</span>
-      ${infoSites.slice(0, INFO_VISIBLE_COUNT).map(s => `<a href="${s.url}" class="sites-info-btn${s.host === currentHost ? ' active' : ''}" target="_blank" rel="noopener">${s.icon} ${s.name}</a>`).join('')}
+      ${infoSites.slice(0, INFO_VISIBLE_COUNT).map(s => `<a href="${s.url}" class="sites-info-btn${s.host === currentHost ? ' active' : ''}" rel="noopener">${s.icon} ${s.name}</a>`).join('')}
       ${infoSites.length > INFO_VISIBLE_COUNT ? `<button class="ws-info-more-btn">${isJA ? 'もっと見る' : isEN ? 'More' : '더보기'} (${infoSites.length - INFO_VISIBLE_COUNT}) ▾</button>` : ''}
-      ${infoSites.slice(INFO_VISIBLE_COUNT).map(s => `<a href="${s.url}" class="sites-info-btn sites-info-hidden${s.host === currentHost ? ' active' : ''}" target="_blank" rel="noopener">${s.icon} ${s.name}</a>`).join('')}
+      ${infoSites.slice(INFO_VISIBLE_COUNT).map(s => `<a href="${s.url}" class="sites-info-btn sites-info-hidden${s.host === currentHost ? ' active' : ''}" rel="noopener">${s.icon} ${s.name}</a>`).join('')}
     </div>`;
 
   bar.querySelector('.ws-open-btn').addEventListener('click', openSearch);

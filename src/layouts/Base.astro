@@ -44,7 +44,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
         <a href={`${base}/`} class="site-logo"><span class="logo-icon">{SITE_ICON}</span><span class="logo-text">{SITE_NAME}</span></a>
         <nav class="header-nav">
           {CATEGORIES.map((c) => <a href={`${base}/category/${encodeURIComponent(c)}/`}>{c}</a>)}
-          <a href="https://wooahouse.com" target="_blank" rel="noopener">WooaHouse →</a>
+          <a href="https://wooahouse.com" rel="noopener">WooaHouse →</a>
         </nav>
       </div>
     </header>
@@ -73,8 +73,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
           정확한 내용은 반드시 원문 기사와 공식 기관의 안내를 확인하세요.
         </p>
         <p class="footer-links">
-          <a href="https://wooahouse.com" target="_blank" rel="noopener">WooaHouse</a>
-          {SISTER_SITES.map((s) => <> · <a href={s.url} target="_blank" rel="noopener">{s.name}</a></>)}
+          <a href="https://wooahouse.com" rel="noopener">WooaHouse</a>
+          {SISTER_SITES.map((s) => <> · <a href={s.url} rel="noopener">{s.name}</a></>)}
         </p>
         <p class="footer-links">
           <a href={`${base}/about/`}>서비스 소개</a> · <a href={`${base}/privacy/`}>개인정보처리방침</a>
