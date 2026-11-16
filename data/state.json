@@ -3,14 +3,10 @@
  "done": [
   "전세보증금반환보증",
   "연금보험",
-  "생명보험"
+  "생명보험",
+  "보험부채"
  ],
  "queue": [
-  {
-   "topic": "보험부채",
-   "category": "보험",
-   "from": "2026-11-16-0402-insurance-news"
-  },
   {
    "topic": "재건축초과이익환수제",
    "category": "부동산",
@@ -60,6 +56,21 @@
    "topic": "가산금리",
    "category": "부동산",
    "from": "2026-11-16-235259-realestate-news"
+  },
+  {
+   "topic": "실거래가 공개시스템",
+   "category": "부동산",
+   "from": "2026-11-17-064420-realestate-news"
+  },
+  {
+   "topic": "전월세 전환",
+   "category": "부동산",
+   "from": "2026-11-17-064420-realestate-news"
+  },
+  {
+   "topic": "연립다세대",
+   "category": "부동산",
+   "from": "2026-11-17-064420-realestate-news"
   }
  ]
 }
