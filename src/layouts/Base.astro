@@ -147,7 +147,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
   article.post h2 { font-size: 1.2rem; margin: 2rem 0 .6rem; padding-left: 10px; border-left: 4px solid var(--primary); }
   article.post h3 { font-size: 1.05rem; margin: 1.4rem 0 .4rem; }
   article.post p { margin-bottom: 1rem; }
-  article.post ul { padding-left: 20px; margin-bottom: 1rem; }
+  article.post ul, article.post ol { padding-left: 20px; margin-bottom: 1rem; }
+  article.post a { text-decoration: underline; text-underline-offset: 2px; }
+  article.post table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .92rem; }
+  article.post th, article.post td { border: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  article.post th { background: var(--bg); }
   .tag.kind { background: #FEF3C7; color: #92400E; }
   .related { margin-top: 1.8rem; padding: 14px 16px; background: var(--bg); border-radius: var(--radius); font-size: .92rem; }
   .related ul { padding-left: 18px; margin-top: 6px; }

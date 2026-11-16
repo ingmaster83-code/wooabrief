@@ -2,14 +2,10 @@
  "lastKind": "news",
  "done": [
   "전세보증금반환보증",
-  "연금보험"
+  "연금보험",
+  "생명보험"
  ],
  "queue": [
-  {
-   "topic": "생명보험",
-   "category": "보험",
-   "from": "2026-11-16-0402-insurance-news"
-  },
   {
    "topic": "보험부채",
    "category": "보험",

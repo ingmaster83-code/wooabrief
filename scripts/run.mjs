@@ -72,7 +72,7 @@ function scoreItem(it, cat) {
 }
 const esc = (s) => JSON.stringify(s);
 
-function publish({ cat, kind, slug, post, sourceItems = [], extraTags = [] }) {
+function publish({ cat, kind, slug, post, sourceItems = [], extraTags = [], topic = '' }) {
   if (post.body.length < MIN_BODY_CHARS) throw new Error(`본문이 너무 짧음(${post.body.length}자)`);
   if (existingTitles.has(norm(post.title))) throw new Error('제목 중복');
   const tags = [...new Set([...post.tags, ...extraTags])].slice(0, 7);
@@ -156,7 +156,7 @@ async function tryGuide() {
   const related = kw.hot[cat].filter((k) => !pick.topic.includes(k)).sort(() => Math.random() - 0.5).slice(0, 4);
   try {
     const post = await writeGuide(cat, pick.topic, related);
-    publish({ cat, kind: 'guide', slug, post, extraTags: [pick.topic] });
+    publish({ cat, kind: 'guide', slug, post, extraTags: [pick.topic], topic: pick.topic });
   } catch (e) {
     state.done = state.done.filter((k) => k !== norm(pick.topic)); // 실패하면 다시 시도할 수 있게 되돌림
     if (pick.from) state.queue.unshift(pick);
