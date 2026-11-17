@@ -6,24 +6,12 @@
   "생명보험",
   "보험부채",
   "재건축초과이익환수제",
-  "8주룰"
+  "8주룰",
+  "ifrs18",
+  "보험판매전문회사",
+  "재건축"
  ],
  "queue": [
-  {
-   "topic": "IFRS18",
-   "category": "보험",
-   "from": "2026-11-16-insurance"
-  },
-  {
-   "topic": "보험판매전문회사",
-   "category": "보험",
-   "from": "2026-11-16-insurance"
-  },
-  {
-   "topic": "재건축",
-   "category": "부동산",
-   "from": "2026-11-16-2054-realestate-news"
-  },
   {
    "topic": "일반분양",
    "category": "부동산",
@@ -108,6 +96,36 @@
    "topic": "전세사기피해예방 현장설명회",
    "category": "부동산",
    "from": "2026-11-17-132238-realestate-news"
+  },
+  {
+   "topic": "공공분양",
+   "category": "부동산",
+   "from": "2026-11-17-224427-realestate-news"
+  },
+  {
+   "topic": "3기 신도시",
+   "category": "부동산",
+   "from": "2026-11-17-224427-realestate-news"
+  },
+  {
+   "topic": "지분적립형 주택",
+   "category": "부동산",
+   "from": "2026-11-17-224456-realestate-news"
+  },
+  {
+   "topic": "전세피해지원",
+   "category": "부동산",
+   "from": "2026-11-17-224456-realestate-news"
+  },
+  {
+   "topic": "리모델링",
+   "category": "부동산",
+   "from": "2026-11-17-224528-realestate-news"
+  },
+  {
+   "topic": "주택법",
+   "category": "부동산",
+   "from": "2026-11-17-224528-realestate-news"
   }
  ]
 }
