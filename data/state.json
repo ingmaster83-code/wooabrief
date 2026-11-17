@@ -1,5 +1,5 @@
 {
- "lastKind": "guide",
+ "lastKind": "news",
  "done": [
   "전세보증금반환보증",
   "연금보험",
@@ -126,6 +126,41 @@
    "topic": "주택법",
    "category": "부동산",
    "from": "2026-11-17-224528-realestate-news"
+  },
+  {
+   "topic": "전세자금대출",
+   "category": "부동산",
+   "from": "2026-11-18-realestate"
+  },
+  {
+   "topic": "청약통장",
+   "category": "부동산",
+   "from": "2026-11-18-realestate"
+  },
+  {
+   "topic": "물적담보",
+   "category": "보험",
+   "from": "2026-11-18-insurance"
+  },
+  {
+   "topic": "실손의료보험",
+   "category": "보험",
+   "from": "2026-11-18-insurance"
+  },
+  {
+   "topic": "불법행위 재공급",
+   "category": "부동산",
+   "from": "2026-11-18-070448-realestate-news"
+  },
+  {
+   "topic": "전용면적",
+   "category": "부동산",
+   "from": "2026-11-18-070448-realestate-news"
+  },
+  {
+   "topic": "청약홈",
+   "category": "부동산",
+   "from": "2026-11-18-070448-realestate-news"
   }
  ]
 }
