@@ -1,22 +1,14 @@
 {
- "lastKind": "news",
+ "lastKind": "guide",
  "done": [
   "전세보증금반환보증",
   "연금보험",
   "생명보험",
-  "보험부채"
+  "보험부채",
+  "재건축초과이익환수제",
+  "8주룰"
  ],
  "queue": [
-  {
-   "topic": "재건축초과이익환수제",
-   "category": "부동산",
-   "from": "2026-11-16-realestate"
-  },
-  {
-   "topic": "8주룰",
-   "category": "보험",
-   "from": "2026-11-16-insurance"
-  },
   {
    "topic": "IFRS18",
    "category": "보험",
@@ -71,6 +63,51 @@
    "topic": "연립다세대",
    "category": "부동산",
    "from": "2026-11-17-064420-realestate-news"
+  },
+  {
+   "topic": "공동주택 리모델링",
+   "category": "부동산",
+   "from": "2026-11-17-realestate"
+  },
+  {
+   "topic": "지역주택조합",
+   "category": "부동산",
+   "from": "2026-11-17-realestate"
+  },
+  {
+   "topic": "전세사기피해예방",
+   "category": "부동산",
+   "from": "2026-11-17-realestate"
+  },
+  {
+   "topic": "자동차보험",
+   "category": "보험",
+   "from": "2026-11-17-insurance"
+  },
+  {
+   "topic": "암보험",
+   "category": "보험",
+   "from": "2026-11-17-insurance"
+  },
+  {
+   "topic": "법인보험대리점",
+   "category": "보험",
+   "from": "2026-11-17-insurance"
+  },
+  {
+   "topic": "분양가상한제",
+   "category": "부동산",
+   "from": "2026-11-17-132201-realestate-news"
+  },
+  {
+   "topic": "등기부등본",
+   "category": "부동산",
+   "from": "2026-11-17-132238-realestate-news"
+  },
+  {
+   "topic": "전세사기피해예방 현장설명회",
+   "category": "부동산",
+   "from": "2026-11-17-132238-realestate-news"
   }
  ]
 }
