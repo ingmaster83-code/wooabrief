@@ -9,24 +9,12 @@
   "8주룰",
   "ifrs18",
   "보험판매전문회사",
-  "재건축"
+  "재건축",
+  "일반분양",
+  "정비구역",
+  "코픽스"
  ],
  "queue": [
-  {
-   "topic": "일반분양",
-   "category": "부동산",
-   "from": "2026-11-16-2054-realestate-news"
-  },
-  {
-   "topic": "정비구역",
-   "category": "부동산",
-   "from": "2026-11-16-2054-realestate-news"
-  },
-  {
-   "topic": "코픽스",
-   "category": "부동산",
-   "from": "2026-11-16-235259-realestate-news"
-  },
   {
    "topic": "변동금리",
    "category": "부동산",
@@ -161,6 +149,46 @@
    "topic": "청약홈",
    "category": "부동산",
    "from": "2026-11-18-070448-realestate-news"
+  },
+  {
+   "topic": "모아타운",
+   "category": "부동산",
+   "from": "2026-11-18-124829-realestate-news"
+  },
+  {
+   "topic": "분양률",
+   "category": "부동산",
+   "from": "2026-11-18-124829-realestate-news"
+  },
+  {
+   "topic": "목표주가",
+   "category": "부동산",
+   "from": "2026-11-18-124829-realestate-news"
+  },
+  {
+   "topic": "주택담보대출",
+   "category": "부동산",
+   "from": "2026-11-18-124908-realestate-news"
+  },
+  {
+   "topic": "소득 대비 임대료 비율",
+   "category": "부동산",
+   "from": "2026-11-18-124908-realestate-news"
+  },
+  {
+   "topic": "드론보험",
+   "category": "보험",
+   "from": "2026-11-18-124947-insurance-news"
+  },
+  {
+   "topic": "총보장한도",
+   "category": "보험",
+   "from": "2026-11-18-124947-insurance-news"
+  },
+  {
+   "topic": "협상에의한계약",
+   "category": "보험",
+   "from": "2026-11-18-124947-insurance-news"
   }
  ]
 }
