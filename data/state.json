@@ -23,24 +23,12 @@
   "전세사기피해예방",
   "자동차보험",
   "암보험",
-  "법인보험대리점"
+  "법인보험대리점",
+  "분양가상한제",
+  "등기부등본",
+  "전세사기피해예방현장설명회"
  ],
  "queue": [
-  {
-   "topic": "분양가상한제",
-   "category": "부동산",
-   "from": "2026-11-17-132201-realestate-news"
-  },
-  {
-   "topic": "등기부등본",
-   "category": "부동산",
-   "from": "2026-11-17-132238-realestate-news"
-  },
-  {
-   "topic": "전세사기피해예방 현장설명회",
-   "category": "부동산",
-   "from": "2026-11-17-132238-realestate-news"
-  },
   {
    "topic": "공공분양",
    "category": "부동산",
@@ -290,6 +278,36 @@
    "topic": "연금전환",
    "category": "보험",
    "from": "2026-11-20-104329-insurance-news"
+  },
+  {
+   "topic": "든든전세주택",
+   "category": "부동산",
+   "from": "2026-11-20-184532-realestate-news"
+  },
+  {
+   "topic": "청약 가점제",
+   "category": "부동산",
+   "from": "2026-11-20-184621-realestate-news"
+  },
+  {
+   "topic": "추첨제",
+   "category": "부동산",
+   "from": "2026-11-20-184621-realestate-news"
+  },
+  {
+   "topic": "주택청약종합저축",
+   "category": "부동산",
+   "from": "2026-11-20-184621-realestate-news"
+  },
+  {
+   "topic": "전월세 안심신탁",
+   "category": "부동산",
+   "from": "2026-11-20-184707-realestate-news"
+  },
+  {
+   "topic": "자산신탁",
+   "category": "부동산",
+   "from": "2026-11-20-184707-realestate-news"
   }
  ]
 }
