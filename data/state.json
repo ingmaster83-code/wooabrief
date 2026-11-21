@@ -28,24 +28,12 @@
   "등기부등본",
   "전세사기피해예방현장설명회",
   "공공분양",
-  "3기신도시"
+  "3기신도시",
+  "지분적립형주택",
+  "전세피해지원",
+  "리모델링"
  ],
  "queue": [
-  {
-   "topic": "지분적립형 주택",
-   "category": "부동산",
-   "from": "2026-11-17-224456-realestate-news"
-  },
-  {
-   "topic": "전세피해지원",
-   "category": "부동산",
-   "from": "2026-11-17-224456-realestate-news"
-  },
-  {
-   "topic": "리모델링",
-   "category": "부동산",
-   "from": "2026-11-17-224528-realestate-news"
-  },
   {
    "topic": "주택법",
    "category": "부동산",
@@ -335,6 +323,46 @@
    "topic": "양성종양",
    "category": "보험",
    "from": "2026-11-21-090752-insurance-news"
+  },
+  {
+   "topic": "통합심의",
+   "category": "부동산",
+   "from": "2026-11-21-163541-realestate-news"
+  },
+  {
+   "topic": "추가분담금",
+   "category": "부동산",
+   "from": "2026-11-21-163541-realestate-news"
+  },
+  {
+   "topic": "공시가격",
+   "category": "부동산",
+   "from": "2026-11-21-163616-realestate-news"
+  },
+  {
+   "topic": "현실화율",
+   "category": "부동산",
+   "from": "2026-11-21-163616-realestate-news"
+  },
+  {
+   "topic": "보유세",
+   "category": "부동산",
+   "from": "2026-11-21-163616-realestate-news"
+  },
+  {
+   "topic": "시간제보육",
+   "category": "부동산",
+   "from": "2026-11-21-163654-realestate-news"
+  },
+  {
+   "topic": "임대어린이집",
+   "category": "부동산",
+   "from": "2026-11-21-163654-realestate-news"
+  },
+  {
+   "topic": "복리시설",
+   "category": "부동산",
+   "from": "2026-11-21-163654-realestate-news"
   }
  ]
 }
