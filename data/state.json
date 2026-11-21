@@ -31,14 +31,10 @@
   "3기신도시",
   "지분적립형주택",
   "전세피해지원",
-  "리모델링"
+  "리모델링",
+  "주택법"
  ],
  "queue": [
-  {
-   "topic": "주택법",
-   "category": "부동산",
-   "from": "2026-11-17-224528-realestate-news"
-  },
   {
    "topic": "전세자금대출",
    "category": "부동산",
@@ -363,6 +359,21 @@
    "topic": "복리시설",
    "category": "부동산",
    "from": "2026-11-21-163654-realestate-news"
+  },
+  {
+   "topic": "ESG 공시",
+   "category": "보험",
+   "from": "2026-11-22-063225-insurance-news"
+  },
+  {
+   "topic": "보험금 청구",
+   "category": "보험",
+   "from": "2026-11-22-063225-insurance-news"
+  },
+  {
+   "topic": "분쟁조정",
+   "category": "보험",
+   "from": "2026-11-22-063225-insurance-news"
   }
  ]
 }
