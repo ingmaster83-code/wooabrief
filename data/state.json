@@ -1,5 +1,5 @@
 {
- "lastKind": "guide",
+ "lastKind": "news",
  "done": [
   "전세보증금반환보증",
   "연금보험",
@@ -37,14 +37,10 @@
   "청약통장",
   "물적담보",
   "실손의료보험",
-  "불법행위재공급"
+  "불법행위재공급",
+  "전용면적"
  ],
  "queue": [
-  {
-   "topic": "전용면적",
-   "category": "부동산",
-   "from": "2026-11-18-070448-realestate-news"
-  },
   {
    "topic": "청약홈",
    "category": "부동산",
@@ -429,6 +425,31 @@
    "topic": "관리처분계획",
    "category": "부동산",
    "from": "2026-11-22-183146-realestate-news"
+  },
+  {
+   "topic": "보험계약서비스마진(CSM)",
+   "category": "보험",
+   "from": "2026-11-23-insurance"
+  },
+  {
+   "topic": "5세대 실손보험",
+   "category": "보험",
+   "from": "2026-11-23-082050-insurance-news"
+  },
+  {
+   "topic": "보험료 할인제도",
+   "category": "보험",
+   "from": "2026-11-23-082050-insurance-news"
+  },
+  {
+   "topic": "해약환급금",
+   "category": "보험",
+   "from": "2026-11-23-082123-insurance-news"
+  },
+  {
+   "topic": "지급여력비율",
+   "category": "보험",
+   "from": "2026-11-23-082123-insurance-news"
   }
  ]
 }
