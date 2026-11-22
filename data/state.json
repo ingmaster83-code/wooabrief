@@ -32,19 +32,11 @@
   "지분적립형주택",
   "전세피해지원",
   "리모델링",
-  "주택법"
+  "주택법",
+  "전세자금대출",
+  "청약통장"
  ],
  "queue": [
-  {
-   "topic": "전세자금대출",
-   "category": "부동산",
-   "from": "2026-11-18-realestate"
-  },
-  {
-   "topic": "청약통장",
-   "category": "부동산",
-   "from": "2026-11-18-realestate"
-  },
   {
    "topic": "물적담보",
    "category": "보험",
@@ -374,6 +366,36 @@
    "topic": "분쟁조정",
    "category": "보험",
    "from": "2026-11-22-063225-insurance-news"
+  },
+  {
+   "topic": "주거형 오피스텔",
+   "category": "부동산",
+   "from": "2026-11-22-realestate"
+  },
+  {
+   "topic": "증여세",
+   "category": "부동산",
+   "from": "2026-11-22-105639-realestate-news"
+  },
+  {
+   "topic": "실거래가",
+   "category": "부동산",
+   "from": "2026-11-22-105639-realestate-news"
+  },
+  {
+   "topic": "시가",
+   "category": "부동산",
+   "from": "2026-11-22-105639-realestate-news"
+  },
+  {
+   "topic": "분양",
+   "category": "부동산",
+   "from": "2026-11-22-105729-realestate-news"
+  },
+  {
+   "topic": "노후 아파트",
+   "category": "부동산",
+   "from": "2026-11-22-105729-realestate-news"
   }
  ]
 }
