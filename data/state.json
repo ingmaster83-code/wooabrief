@@ -34,24 +34,12 @@
   "리모델링",
   "주택법",
   "전세자금대출",
-  "청약통장"
+  "청약통장",
+  "물적담보",
+  "실손의료보험",
+  "불법행위재공급"
  ],
  "queue": [
-  {
-   "topic": "물적담보",
-   "category": "보험",
-   "from": "2026-11-18-insurance"
-  },
-  {
-   "topic": "실손의료보험",
-   "category": "보험",
-   "from": "2026-11-18-insurance"
-  },
-  {
-   "topic": "불법행위 재공급",
-   "category": "부동산",
-   "from": "2026-11-18-070448-realestate-news"
-  },
   {
    "topic": "전용면적",
    "category": "부동산",
@@ -396,6 +384,51 @@
    "topic": "노후 아파트",
    "category": "부동산",
    "from": "2026-11-22-105729-realestate-news"
+  },
+  {
+   "topic": "주거서비스 플랫폼",
+   "category": "부동산",
+   "from": "2026-11-22-183028-realestate-news"
+  },
+  {
+   "topic": "입주자대표회의",
+   "category": "부동산",
+   "from": "2026-11-22-183028-realestate-news"
+  },
+  {
+   "topic": "업무협약",
+   "category": "부동산",
+   "from": "2026-11-22-183028-realestate-news"
+  },
+  {
+   "topic": "매입임대주택",
+   "category": "부동산",
+   "from": "2026-11-22-183106-realestate-news"
+  },
+  {
+   "topic": "양도소득세",
+   "category": "부동산",
+   "from": "2026-11-22-183106-realestate-news"
+  },
+  {
+   "topic": "헌법소원",
+   "category": "부동산",
+   "from": "2026-11-22-183106-realestate-news"
+  },
+  {
+   "topic": "재개발",
+   "category": "부동산",
+   "from": "2026-11-22-183146-realestate-news"
+  },
+  {
+   "topic": "시공사 선정",
+   "category": "부동산",
+   "from": "2026-11-22-183146-realestate-news"
+  },
+  {
+   "topic": "관리처분계획",
+   "category": "부동산",
+   "from": "2026-11-22-183146-realestate-news"
   }
  ]
 }
