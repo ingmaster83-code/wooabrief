@@ -41,24 +41,12 @@
   "전용면적",
   "청약홈",
   "모아타운",
-  "분양률"
+  "분양률",
+  "목표주가",
+  "주택담보대출",
+  "소득대비임대료비율"
  ],
  "queue": [
-  {
-   "topic": "목표주가",
-   "category": "부동산",
-   "from": "2026-11-18-124829-realestate-news"
-  },
-  {
-   "topic": "주택담보대출",
-   "category": "부동산",
-   "from": "2026-11-18-124908-realestate-news"
-  },
-  {
-   "topic": "소득 대비 임대료 비율",
-   "category": "부동산",
-   "from": "2026-11-18-124908-realestate-news"
-  },
   {
    "topic": "드론보험",
    "category": "보험",
@@ -458,6 +446,26 @@
    "topic": "일조 심의",
    "category": "부동산",
    "from": "2026-11-23-125546-realestate-news"
+  },
+  {
+   "topic": "아파트 청약",
+   "category": "부동산",
+   "from": "2026-11-23-230713-realestate-news"
+  },
+  {
+   "topic": "임대주택",
+   "category": "부동산",
+   "from": "2026-11-23-230751-realestate-news"
+  },
+  {
+   "topic": "정비사업",
+   "category": "부동산",
+   "from": "2026-11-23-230751-realestate-news"
+  },
+  {
+   "topic": "정당계약",
+   "category": "부동산",
+   "from": "2026-11-23-230829-realestate-news"
   }
  ]
 }
