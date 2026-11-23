@@ -1,0 +1,19 @@
+---
+import Ad from './Ad.astro';
+import { KIND_LABEL } from '../config';
+import { subOf, fmtDate, type Post } from '../lib/posts';
+interface Props { posts: Post[]; adEvery?: number }
+const { posts, adEvery = 6 } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+{posts.length === 0 && <p class="meta">아직 발행된 글이 없습니다.</p>}
+{posts.map((p, i) => (
+  <>
+    <a class="card" href={`${base}/posts/${p.id}/`}>
+      <span class="tag">{p.data.category}</span><span class="tag sub">{subOf(p).name}</span><span class="tag kind">{KIND_LABEL[p.data.kind]}</span><span class="meta">{fmtDate(p.data.date)}</span>
+      <h2>{p.data.title}</h2>
+      <p>{p.data.description}</p>
+    </a>
+    {(i + 1) % adEvery === 0 && <div class="in-article-ad"><Ad /></div>}
+  </>
+))}

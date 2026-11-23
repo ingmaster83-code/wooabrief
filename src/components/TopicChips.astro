@@ -1,0 +1,21 @@
+---
+// 주제별 보기: 분야(부동산/보험)별 세부 주제 칩. current 가 있으면 강조
+import { SUBS, type Category, subOf, getSortedPosts } from '../lib/posts';
+interface Props { posts?: unknown; category?: Category; current?: string }
+const { category, current } = Astro.props;
+const posts = await getSortedPosts(); // 개수는 항상 전체 글 기준
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const counts = new Map<string, number>();
+for (const p of posts) counts.set(subOf(p).slug, (counts.get(subOf(p).slug) ?? 0) + 1);
+const cats = (category ? [category] : (Object.keys(SUBS) as Category[]));
+---
+<section class="chips-wrap" aria-label="주제별 보기">
+  {cats.map((cat) => (
+    <div class="chips-row">
+      <a class={`chips-cat ${!current && category === cat ? 'on' : ''}`} href={`${base}/category/${encodeURIComponent(cat)}/`}>{cat}</a>
+      {SUBS[cat].filter((s) => (counts.get(s.slug) ?? 0) > 0).map((s) => (
+        <a class={`chip-link ${current === s.slug ? 'on' : ''}`} href={`${base}/topic/${s.slug}/`}>{s.name}<em>{counts.get(s.slug) ?? 0}</em></a>
+      ))}
+    </div>
+  ))}
+</section>

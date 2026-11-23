@@ -1,0 +1,27 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import Pagination from '../components/Pagination.astro';
+import TopicChips from '../components/TopicChips.astro';
+import { getSortedPosts, PAGE_SIZE } from '../lib/posts';
+import { SITE_NAME, SITE_DESC } from '../config';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await getSortedPosts();
+  return paginate(posts, { pageSize: PAGE_SIZE, props: { all: posts } });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const { all } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const first = page.currentPage === 1;
+---
+<Base title={first ? undefined : `전체 글 ${page.currentPage}페이지`}>
+  <h1 class="page-title">{SITE_NAME} · 오늘의 이슈</h1>
+  <p class="meta" style="margin-bottom:14px">{SITE_DESC}</p>
+  <TopicChips posts={all} />
+  <p class="meta list-count">전체 글 {page.total}편 · {page.currentPage}/{page.lastPage} 페이지</p>
+  <PostList posts={page.data} />
+  <Pagination page={page} root={`${base}/`} />
+</Base>

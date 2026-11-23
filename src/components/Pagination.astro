@@ -1,0 +1,22 @@
+---
+// Astro paginate()의 page 객체를 받아 이전/다음 + 페이지 번호를 그린다
+interface Props { page: { currentPage: number; lastPage: number; url: { prev?: string; next?: string } }; root: string }
+const { page, root } = Astro.props;
+const { currentPage, lastPage } = page;
+if (lastPage <= 1) { /* 1페이지면 렌더하지 않음 */ }
+const urlOf = (n: number) => (n === 1 ? root : `${root}${n}/`);
+
+// 현재 페이지 주변만 보여주는 번호 목록 (1 … 4 5 [6] 7 8 … 20)
+const nums: (number | '…')[] = [];
+for (let n = 1; n <= lastPage; n++) {
+  if (n === 1 || n === lastPage || Math.abs(n - currentPage) <= 2) nums.push(n);
+  else if (nums[nums.length - 1] !== '…') nums.push('…');
+}
+---
+{lastPage > 1 && (
+  <nav class="pager" aria-label="페이지 이동">
+    {page.url.prev !== undefined ? <a href={page.url.prev || root} rel="prev">‹ 이전</a> : <span class="off">‹ 이전</span>}
+    {nums.map((n) => n === '…' ? <span class="gap">…</span> : n === currentPage ? <span class="cur" aria-current="page">{n}</span> : <a href={urlOf(n)}>{n}</a>)}
+    {page.url.next ? <a href={page.url.next} rel="next">다음 ›</a> : <span class="off">다음 ›</span>}
+  </nav>
+)}

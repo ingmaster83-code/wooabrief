@@ -1,0 +1,31 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../../layouts/Base.astro';
+import PostList from '../../../components/PostList.astro';
+import Pagination from '../../../components/Pagination.astro';
+import TopicChips from '../../../components/TopicChips.astro';
+import { getSortedPosts, PAGE_SIZE, ALL_SUBS, subOf } from '../../../lib/posts';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const all = await getSortedPosts();
+  return ALL_SUBS.flatMap((s) => {
+    const catPosts = all.filter((p) => p.data.category === s.category);
+    const posts = catPosts.filter((p) => subOf(p).slug === s.slug);
+    if (posts.length === 0) return []; // 글이 없는 주제는 페이지를 만들지 않음
+    return paginate(posts, { params: { sub: s.slug }, pageSize: PAGE_SIZE, props: { sub: s, catPosts } });
+  });
+}) satisfies GetStaticPaths;
+
+const { page, sub, catPosts } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const root = `${base}/topic/${sub.slug}/`;
+const suffix = page.currentPage > 1 ? ` ${page.currentPage}페이지` : '';
+---
+<Base title={`${sub.category} ${sub.name}${suffix}`} description={`${sub.category} 분야 중 ${sub.name} 관련 이슈와 용어·제도 해설 모음`}>
+  <nav class="breadcrumb"><a href={`${base}/`}>홈</a> › <a href={`${base}/category/${encodeURIComponent(sub.category)}/`}>{sub.category}</a> › <span>{sub.name}</span></nav>
+  <h1 class="page-title">{sub.category} · {sub.name}</h1>
+  <TopicChips posts={catPosts} category={sub.category} current={sub.slug} />
+  <p class="meta list-count">{sub.name} 글 {page.total}편 · {page.currentPage}/{page.lastPage} 페이지</p>
+  <PostList posts={page.data} />
+  <Pagination page={page} root={root} />
+</Base>

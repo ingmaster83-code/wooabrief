@@ -1,0 +1,27 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import Pagination from '../../components/Pagination.astro';
+import TopicChips from '../../components/TopicChips.astro';
+import { getSortedPosts, PAGE_SIZE, KINDS } from '../../lib/posts';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const all = await getSortedPosts();
+  const posts = all.filter((p) => KINDS.issue.match(p.data.kind));
+  return paginate(posts, { pageSize: PAGE_SIZE, props: { posts } });
+}) satisfies GetStaticPaths;
+
+const { page, posts } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const suffix = page.currentPage > 1 ? ` ${page.currentPage}페이지` : '';
+---
+<Base title={`${KINDS.issue.name}${suffix}`} description={KINDS.issue.desc}>
+  <nav class="breadcrumb"><a href={`${base}/`}>홈</a> › <span>{KINDS.issue.name}</span></nav>
+  <h1 class="page-title">{KINDS.issue.name}</h1>
+  <p class="meta" style="margin-bottom:14px">{KINDS.issue.desc}</p>
+  <TopicChips posts={posts} />
+  <p class="meta list-count">이슈 글 {page.total}편 · {page.currentPage}/{page.lastPage} 페이지</p>
+  <PostList posts={page.data} />
+  <Pagination page={page} root={`${base}/issues/`} />
+</Base>

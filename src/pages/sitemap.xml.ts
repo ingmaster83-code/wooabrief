@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { CATEGORIES } from '../config';
+import { ALL_SUBS, subOf } from '../lib/posts';
 
 // 네이버·구글이 바로 읽을 수 있는 단일 /sitemap.xml
 export const GET: APIRoute = async ({ site }) => {
@@ -12,6 +13,9 @@ export const GET: APIRoute = async ({ site }) => {
   const urls: { loc: string; lastmod?: string }[] = [
     { loc: `${origin}/`, lastmod: day(latest) },
     ...CATEGORIES.map((c) => ({ loc: `${origin}/category/${encodeURIComponent(c)}/`, lastmod: day(latest) })),
+    { loc: `${origin}/guide/`, lastmod: day(latest) },
+    { loc: `${origin}/issues/`, lastmod: day(latest) },
+    ...ALL_SUBS.filter((s) => posts.some((p) => p.data.category === s.category && subOf(p).slug === s.slug)).map((s) => ({ loc: `${origin}/topic/${s.slug}/`, lastmod: day(latest) })),
     { loc: `${origin}/about/` },
     { loc: `${origin}/privacy/` },
     ...posts.map((p) => ({ loc: `${origin}/posts/${p.id}/`, lastmod: day(p.data.date.valueOf()) })),
