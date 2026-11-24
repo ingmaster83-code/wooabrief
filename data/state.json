@@ -49,14 +49,10 @@
   "총보장한도",
   "협상에의한계약",
   "분양계약취소",
-  "청약"
+  "청약",
+  "사전청약"
  ],
  "queue": [
-  {
-   "topic": "사전청약",
-   "category": "부동산",
-   "from": "2026-11-18-214404-realestate-news"
-  },
   {
    "topic": "본청약",
    "category": "부동산",
@@ -501,6 +497,21 @@
    "topic": "임대차 계약 갱신요구권",
    "category": "부동산",
    "from": "2026-11-24-210738-realestate-news"
+  },
+  {
+   "topic": "무순위청약",
+   "category": "부동산",
+   "from": "2026-11-25-realestate"
+  },
+  {
+   "topic": "미분양매입확약",
+   "category": "부동산",
+   "from": "2026-11-25-realestate"
+  },
+  {
+   "topic": "기본형 건축비",
+   "category": "부동산",
+   "from": "2026-11-25-074115-realestate-news"
   }
  ]
 }
