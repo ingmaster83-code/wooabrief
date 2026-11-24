@@ -1,5 +1,5 @@
 {
- "lastKind": "news",
+ "lastKind": "guide",
  "done": [
   "전세보증금반환보증",
   "연금보험",
@@ -44,19 +44,11 @@
   "분양률",
   "목표주가",
   "주택담보대출",
-  "소득대비임대료비율"
+  "소득대비임대료비율",
+  "드론보험",
+  "총보장한도"
  ],
  "queue": [
-  {
-   "topic": "드론보험",
-   "category": "보험",
-   "from": "2026-11-18-124947-insurance-news"
-  },
-  {
-   "topic": "총보장한도",
-   "category": "보험",
-   "from": "2026-11-18-124947-insurance-news"
-  },
   {
    "topic": "협상에의한계약",
    "category": "보험",
@@ -466,6 +458,41 @@
    "topic": "정당계약",
    "category": "부동산",
    "from": "2026-11-23-230829-realestate-news"
+  },
+  {
+   "topic": "재건축정비사업",
+   "category": "부동산",
+   "from": "2026-11-24-realestate"
+  },
+  {
+   "topic": "개인형 퇴직연금",
+   "category": "보험",
+   "from": "2026-11-24-insurance"
+  },
+  {
+   "topic": "불완전판매",
+   "category": "보험",
+   "from": "2026-11-24-insurance"
+  },
+  {
+   "topic": "직주근접",
+   "category": "부동산",
+   "from": "2026-11-24-104857-realestate-news"
+  },
+  {
+   "topic": "청약 경쟁률",
+   "category": "부동산",
+   "from": "2026-11-24-104857-realestate-news"
+  },
+  {
+   "topic": "공공임대주택",
+   "category": "부동산",
+   "from": "2026-11-24-104932-realestate-news"
+  },
+  {
+   "topic": "재건축 분담금",
+   "category": "부동산",
+   "from": "2026-11-24-104932-realestate-news"
   }
  ]
 }
