@@ -50,24 +50,12 @@
   "협상에의한계약",
   "분양계약취소",
   "청약",
-  "사전청약"
+  "사전청약",
+  "본청약",
+  "공공실손의료보험",
+  "제대군인지원에관한법률"
  ],
  "queue": [
-  {
-   "topic": "본청약",
-   "category": "부동산",
-   "from": "2026-11-18-214404-realestate-news"
-  },
-  {
-   "topic": "공공 실손의료보험",
-   "category": "보험",
-   "from": "2026-11-18-214441-insurance-news"
-  },
-  {
-   "topic": "제대군인지원에 관한 법률",
-   "category": "보험",
-   "from": "2026-11-18-214441-insurance-news"
-  },
   {
    "topic": "최저주거기준",
    "category": "부동산",
@@ -512,6 +500,31 @@
    "topic": "기본형 건축비",
    "category": "부동산",
    "from": "2026-11-25-074115-realestate-news"
+  },
+  {
+   "topic": "전세임대",
+   "category": "부동산",
+   "from": "2026-11-25-141622-realestate-news"
+  },
+  {
+   "topic": "확정일자",
+   "category": "부동산",
+   "from": "2026-11-25-141622-realestate-news"
+  },
+  {
+   "topic": "개인형 퇴직연금(IRP)",
+   "category": "보험",
+   "from": "2026-11-25-141735-insurance-news"
+  },
+  {
+   "topic": "분할연금",
+   "category": "보험",
+   "from": "2026-11-25-141735-insurance-news"
+  },
+  {
+   "topic": "이율보증형 상품",
+   "category": "보험",
+   "from": "2026-11-25-141735-insurance-news"
   }
  ]
 }
