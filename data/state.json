@@ -55,24 +55,12 @@
   "공공실손의료보험",
   "제대군인지원에관한법률",
   "최저주거기준",
-  "보편형공공임대"
+  "보편형공공임대",
+  "주택재개발정비사업",
+  "차량손해면책제도",
+  "신용정보법"
  ],
  "queue": [
-  {
-   "topic": "주택재개발정비사업",
-   "category": "부동산",
-   "from": "2026-11-19-realestate"
-  },
-  {
-   "topic": "차량손해면책제도",
-   "category": "보험",
-   "from": "2026-11-19-insurance"
-  },
-  {
-   "topic": "신용정보법",
-   "category": "보험",
-   "from": "2026-11-19-insurance"
-  },
   {
    "topic": "실거래가격 지수",
    "category": "부동산",
@@ -547,6 +535,36 @@
    "topic": "공적임대주택",
    "category": "부동산",
    "from": "2026-11-26-090548-realestate-news"
+  },
+  {
+   "topic": "임차권등기명령",
+   "category": "부동산",
+   "from": "2026-11-26-174527-realestate-news"
+  },
+  {
+   "topic": "전세사기",
+   "category": "부동산",
+   "from": "2026-11-26-174527-realestate-news"
+  },
+  {
+   "topic": "보증금지원형 장기안심주택",
+   "category": "부동산",
+   "from": "2026-11-26-174619-realestate-news"
+  },
+  {
+   "topic": "등록임대주택",
+   "category": "부동산",
+   "from": "2026-11-26-174619-realestate-news"
+  },
+  {
+   "topic": "공공주택",
+   "category": "부동산",
+   "from": "2026-11-26-174619-realestate-news"
+  },
+  {
+   "topic": "매매가격지수",
+   "category": "부동산",
+   "from": "2026-11-26-174749-realestate-news"
   }
  ]
 }
