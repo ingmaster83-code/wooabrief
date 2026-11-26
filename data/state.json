@@ -53,19 +53,11 @@
   "사전청약",
   "본청약",
   "공공실손의료보험",
-  "제대군인지원에관한법률"
+  "제대군인지원에관한법률",
+  "최저주거기준",
+  "보편형공공임대"
  ],
  "queue": [
-  {
-   "topic": "최저주거기준",
-   "category": "부동산",
-   "from": "2026-11-19-realestate"
-  },
-  {
-   "topic": "보편형 공공임대",
-   "category": "부동산",
-   "from": "2026-11-19-realestate"
-  },
   {
    "topic": "주택재개발정비사업",
    "category": "부동산",
@@ -525,6 +517,36 @@
    "topic": "이율보증형 상품",
    "category": "보험",
    "from": "2026-11-25-141735-insurance-news"
+  },
+  {
+   "topic": "공적주택",
+   "category": "부동산",
+   "from": "2026-11-26-realestate"
+  },
+  {
+   "topic": "보험금청구권신탁",
+   "category": "보험",
+   "from": "2026-11-26-insurance"
+  },
+  {
+   "topic": "치매보험",
+   "category": "보험",
+   "from": "2026-11-26-090516-insurance-news"
+  },
+  {
+   "topic": "장기간병보험",
+   "category": "보험",
+   "from": "2026-11-26-090516-insurance-news"
+  },
+  {
+   "topic": "단기임대",
+   "category": "부동산",
+   "from": "2026-11-26-090548-realestate-news"
+  },
+  {
+   "topic": "공적임대주택",
+   "category": "부동산",
+   "from": "2026-11-26-090548-realestate-news"
   }
  ]
 }
