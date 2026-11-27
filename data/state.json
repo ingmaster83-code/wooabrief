@@ -58,19 +58,11 @@
   "보편형공공임대",
   "주택재개발정비사업",
   "차량손해면책제도",
-  "신용정보법"
+  "신용정보법",
+  "실거래가격지수",
+  "전세"
  ],
  "queue": [
-  {
-   "topic": "실거래가격 지수",
-   "category": "부동산",
-   "from": "2026-11-19-114423-realestate-news"
-  },
-  {
-   "topic": "전세",
-   "category": "부동산",
-   "from": "2026-11-19-114423-realestate-news"
-  },
   {
    "topic": "견본주택",
    "category": "부동산",
@@ -565,6 +557,36 @@
    "topic": "매매가격지수",
    "category": "부동산",
    "from": "2026-11-26-174749-realestate-news"
+  },
+  {
+   "topic": "종합부동산세",
+   "category": "부동산",
+   "from": "2026-11-27-realestate"
+  },
+  {
+   "topic": "주택도시보증공사",
+   "category": "부동산",
+   "from": "2026-11-27-realestate"
+  },
+  {
+   "topic": "정부보장사업",
+   "category": "보험",
+   "from": "2026-11-27-insurance"
+  },
+  {
+   "topic": "신도시",
+   "category": "부동산",
+   "from": "2026-11-27-110415-realestate-news"
+  },
+  {
+   "topic": "주민등록 인구통계",
+   "category": "부동산",
+   "from": "2026-11-27-110415-realestate-news"
+  },
+  {
+   "topic": "손해율",
+   "category": "보험",
+   "from": "2026-11-27-110453-insurance-news"
   }
  ]
 }
