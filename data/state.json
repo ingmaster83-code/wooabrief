@@ -60,24 +60,12 @@
   "차량손해면책제도",
   "신용정보법",
   "실거래가격지수",
-  "전세"
+  "전세",
+  "견본주택",
+  "특별공급",
+  "수익공유형모기지"
  ],
  "queue": [
-  {
-   "topic": "견본주택",
-   "category": "부동산",
-   "from": "2026-11-19-114518-realestate-news"
-  },
-  {
-   "topic": "특별공급",
-   "category": "부동산",
-   "from": "2026-11-19-114518-realestate-news"
-  },
-  {
-   "topic": "수익공유형 모기지",
-   "category": "부동산",
-   "from": "2026-11-19-201433-realestate-news"
-  },
   {
    "topic": "주택담보대출비율(LTV)",
    "category": "부동산",
@@ -587,6 +575,31 @@
    "topic": "손해율",
    "category": "보험",
    "from": "2026-11-27-110453-insurance-news"
+  },
+  {
+   "topic": "중도금 대출",
+   "category": "부동산",
+   "from": "2026-11-27-201359-realestate-news"
+  },
+  {
+   "topic": "모아주택",
+   "category": "부동산",
+   "from": "2026-11-27-201435-realestate-news"
+  },
+  {
+   "topic": "신탁방식 정비사업",
+   "category": "부동산",
+   "from": "2026-11-27-201435-realestate-news"
+  },
+  {
+   "topic": "도시정비형 재개발사업",
+   "category": "부동산",
+   "from": "2026-11-27-201435-realestate-news"
+  },
+  {
+   "topic": "주거용 오피스텔",
+   "category": "부동산",
+   "from": "2026-11-27-201507-realestate-news"
   }
  ]
 }
