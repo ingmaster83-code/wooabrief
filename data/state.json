@@ -63,19 +63,11 @@
   "전세",
   "견본주택",
   "특별공급",
-  "수익공유형모기지"
+  "수익공유형모기지",
+  "주택담보대출비율(ltv)",
+  "고정금리"
  ],
  "queue": [
-  {
-   "topic": "주택담보대출비율(LTV)",
-   "category": "부동산",
-   "from": "2026-11-19-201433-realestate-news"
-  },
-  {
-   "topic": "고정금리",
-   "category": "부동산",
-   "from": "2026-11-19-201433-realestate-news"
-  },
   {
    "topic": "노후계획도시 정비사업",
    "category": "부동산",
@@ -600,6 +592,26 @@
    "topic": "주거용 오피스텔",
    "category": "부동산",
    "from": "2026-11-27-201507-realestate-news"
+  },
+  {
+   "topic": "기획부동산",
+   "category": "부동산",
+   "from": "2026-11-28-realestate"
+  },
+  {
+   "topic": "부동산캘린더",
+   "category": "부동산",
+   "from": "2026-11-28-115348-realestate-news"
+  },
+  {
+   "topic": "연금저축",
+   "category": "보험",
+   "from": "2026-11-28-115424-insurance-news"
+  },
+  {
+   "topic": "국민연금",
+   "category": "보험",
+   "from": "2026-11-28-115424-insurance-news"
   }
  ]
 }
