@@ -65,24 +65,12 @@
   "특별공급",
   "수익공유형모기지",
   "주택담보대출비율(ltv)",
-  "고정금리"
+  "고정금리",
+  "노후계획도시정비사업",
+  "광역급행철도",
+  "국가고객만족도"
  ],
  "queue": [
-  {
-   "topic": "노후계획도시 정비사업",
-   "category": "부동산",
-   "from": "2026-11-19-201513-realestate-news"
-  },
-  {
-   "topic": "광역급행철도",
-   "category": "부동산",
-   "from": "2026-11-19-201513-realestate-news"
-  },
-  {
-   "topic": "국가고객만족도",
-   "category": "보험",
-   "from": "2026-11-19-201549-insurance-news"
-  },
   {
    "topic": "손해보험",
    "category": "보험",
@@ -612,6 +600,31 @@
    "topic": "국민연금",
    "category": "보험",
    "from": "2026-11-28-115424-insurance-news"
+  },
+  {
+   "topic": "시세총액",
+   "category": "부동산",
+   "from": "2026-11-28-202700-realestate-news"
+  },
+  {
+   "topic": "1기 신도시",
+   "category": "부동산",
+   "from": "2026-11-28-202733-realestate-news"
+  },
+  {
+   "topic": "선도지구",
+   "category": "부동산",
+   "from": "2026-11-28-202733-realestate-news"
+  },
+  {
+   "topic": "토지사용료",
+   "category": "부동산",
+   "from": "2026-11-28-202804-realestate-news"
+  },
+  {
+   "topic": "사회주택",
+   "category": "부동산",
+   "from": "2026-11-28-202804-realestate-news"
   }
  ]
 }
